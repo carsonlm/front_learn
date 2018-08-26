@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+           width: 100px;
+            height: 100px;
+        }
+        .p1{
+            position: static;
+            background: red;
+        }
+        .p2{
+            position: relative;
+            left: 10px;
+            top: -10px;
+            background: blue;
+
+        }
+        .p3{
+            position: absolute;
+            left: 80px;
+            top: 30px;
+            background: green;
+        }
+        .p3-1{
+            position: absolute;
+            left: 180px;
+            top: 50px;
+            background: green;
+        }
+        .p4{
+            position:fixed;
+            left: 0;
+            bottom: 10px;
+            background: blueviolet;
+        }
+        .p5{
+            background: darkslategrey;
+        }
+    </style>
+</head>
+<!--定位为relative、absolute、fixed的三个元素可以使用z-index-->
+<body>
+    <div class="p1">position:static</div>
+    <!--relative 的偏移是相对元素本身来说的，它偏移的时候不会改变他本身占据的空间，即它原来的占据的空间一直存在，不会因为偏移改变布局的计算-->
+    <div class="p2">position:relative</div>
+    <!--absolute 会从文档流中脱离，即不会对其他元素的布局造成影响，它是相对于最近父容器的relative和absolute，如果都没有的话就相对于body定位-->
+    <div class="p3">position:absolute
+        <div class="p3-0" style="width: 50px;height: 50px;background:aliceblue;">position:absolute</div>
+    </div>
+    <div class="p3-1" style="background: yellow">position:absolute2</div>
+    <!--fixed 也是脱离文档流的，不会对其他元素的布局造成影响，它是相对于屏幕的即相对于可视区域是固定的-->
+    <div class="p4">position:fixed</div>
+    <div class="p5">p5</div>
+</body>
+</html>

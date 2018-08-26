@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <style>
+        @keyframes bounce-in {
+        0%{
+            transform:scale(0);
+        }
+        50%{
+            transform:scale(1.5);
+        }
+        100%{
+            transform:scale(1);
+        }
+        }
+        .fade-leave-active{
+            transform-origin: left center;
+            animation:bounce-in 1s;
+        }
+        .fade-enter-active{
+            transform-origin: left center;
+            animation:bounce-in 1s reverse;/*反向执行*/
+        }
+    </style>
+</head>
+<body>
+      <div id="app">
+          <!--可以用自定义的class名字代替封装好的class   eg:   enter-active-class="active" leave-active-class="leave"-->
+          <transition name="fade">
+             <div v-show="show">asdfasd</div>
+          </transition>
+             <button @click="btnClick">switch</button>
+      </div>
+      <script>
+
+
+          var vm=new Vue({
+              el:"#app",
+              data:{
+                  show:false,
+              },
+              methods:{
+                  btnClick:function () {
+                      this.show=!this.show
+                  }
+              }
+          })
+      </script>
+
+</body>
+</html>

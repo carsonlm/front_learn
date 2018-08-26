@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<style><!-- 按照顺序往后找到有的为止-->
+    body{
+        font-family: "monaco";
+        font-family: "monaco", "PingFang SC" ;
+        font-family: "aaa","monaco","PingFang SC";
+    }
+    .chinese{
+        font-family: "Microsoft Himalaya";
+        font-family: Serif,"monaco","Microsoft Himalaya";
+    }.weight{
+
+    }
+     /*自定义一个字体/或者远程字体  远程字体也可以下载导入之后再进行引用*/
+     @font-face {
+        font-family: "IF";
+        src: url(".indieFlower.ttf");
+     }
+    .custom-font{
+       font-family: IF;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body class="body" id="body">
+   Hello world 你好，世界
+   <div class="chinese">你好</div>
+   <div class="weight">你好  Hello</div>
+   <div class="custom-font">自定义字体 Hello</div>
+</body>
+</html>

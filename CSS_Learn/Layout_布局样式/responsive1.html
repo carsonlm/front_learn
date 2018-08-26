@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--控制宽度等于设备宽度-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Title</title>
+    <style>
+        .container{
+            margin: 0 auto;
+            display: flex;
+            max-width: 800px;
+            border: 1px solid black;
+        }
+        .left{
+            display: flex;
+            width: 200px;
+            background: #ff000e;
+            margin: 5px;
+
+        }
+
+        @media (max-width: 640px) { /*当尺寸小于640时，隐藏左边栏*/
+            .left{
+                display: none;
+            }
+        }
+        .right{
+            display: flex;
+            flex: 1;
+            background: blue;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+   <div class="container">
+       <div class="left">aaa</div>
+       <div class="right">bbb</div>
+   </div>
+
+</body>
+</html>

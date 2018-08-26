@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Title</title>
+    <style>
+        /*rem是HTML字体大小默认是16像素，为了方便可以重新计算*/
+        html{
+            font-size: 20px;
+        }
+        .container{
+            margin: 0 auto;
+            max-width: 800px;
+            border: 1px solid black;
+        }
+        .d{
+            display: inline-block;
+            /*width: 180px;*/
+            /*height: 180px;*/
+            width: 9rem;
+            height: 9rem;
+            line-height: 9rem;
+            text-align: center;
+            border-radius: 4.5rem;
+            border: 1px solid red;
+            margin: .3rem;
+        }
+        /*范围大的必须放在上面  不然会覆盖*/
+        @media (max-width: 500px) {
+            html{
+                font-size: 18px;
+            }
+        }
+        @media (max-width: 400px) {
+            html{
+                font-size: 15px;
+            }
+        }
+        @media (max-width: 250px) {
+            html {
+                font-size: 12px;
+            }
+        }
+
+        /*第一种方法 为了适配移动端将横排列改为竖直排列 即折行方法*/
+        @media (max-width: 640px) {
+            d{
+                margin: .7rem auto;
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="d">d1</div>
+        <div class="d">d2</div>
+        <div class="d">d3</div>
+        <div class="d">d4</div>
+    </div>
+</body>
+</html>

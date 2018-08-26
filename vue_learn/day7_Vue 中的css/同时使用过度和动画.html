@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <link href="./animate.css"  rel="stylesheet" type="text/css" ></link>
+   <!--使用animate css动画 必须要使用自定义名字 且为animated 加加上需要的效果名-->
+    <style>
+       .fade-enter,fade-leave{
+           opacity: 0;
+       }
+        .fade-enter-active,fade-leave-active{
+            transition: opacity 3s;
+        }
+    </style>
+</head>
+<body>
+      <div id="app">
+          <!--type="transition"  这样可以让时长以transition的时长为准而不是animate !--type="transition"--
+          :duration="10000" 自定义时长 10s
+          -->
+          <!--可以用自定义的class名字代替封装好的class   eg:   enter-active-class="active" leave-active-class="leave"-->
+          <transition :duration="{enter: 10000,leave: 5000}"  name="fade" appear   appear-active-class="animated hinge" enter-active-class="animated swing fade-active-class"  leave-active-class="animated hinge leave-active-class">
+             <div v-show="show">asdfasd</div>
+          </transition>
+             <button @click="btnClick">switch</button>
+      </div>
+      <script>
+
+
+          var vm=new Vue({
+              el:"#app",
+              data:{
+                  show:true,
+              },
+              methods:{
+                  btnClick:function () {
+                      this.show=!this.show
+                  }
+              }
+          })
+      </script>
+
+</body>
+</html>

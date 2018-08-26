@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        span{
+            background:red;
+        }
+        .c1{
+            line-height: 20px;
+        }
+        .c2{
+            line-height: 8px;
+        }
+        .c3{
+            line-height: 30px;
+        }
+        .c5{
+            line-height: 28px;
+        }
+    </style>
+</head>
+<body>
+<!--行高不一样，但渲染的高度一样，这个和字体的排版有关 ，都是按字体的基线对其的-->
+<!--行高决定字体上、下多余的高度，，并不影响本身布局的高度，只是影响了占据空间的高度-->
+   <div class="c1">
+       <span class="c1">inline box sdfg1</span>
+       <span class="c2">inline box</span>
+       <span class="c3">inline box</span>
+       inline box <!--匿名的inline box-->
+       <span class="c5">inline box</span>
+   </div>
+
+
+</body>
+</html>

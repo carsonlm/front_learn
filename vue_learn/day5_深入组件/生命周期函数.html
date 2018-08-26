@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--vue生命周期函数就是vue实例在某个时间点就会自动执行的函数-->
+    <title>vue生命周期函数</title>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+     <div id="app">
+     </div>
+
+     <script>
+         var vm=new Vue({
+             el:"#app",
+             /*vue基础初始化完执行下面函数*/
+             beforeCreate:function () {
+                 console.log("beforeCreate");
+             },
+             /*外部注入，双向绑定的内容之后————即vue的初始化完成之后_会执行下面函数*/
+             created:function () {
+                 console.log("created");
+             },
+             /*页面渲染(模板和数据相结合即将挂载前的一瞬间)之前执行下面函数*/
+             beforeMount: function () {
+                 console.log(this.$el);
+                 console.log("beforeMount");
+             },
+             /*挂载完之后执行下面函数*/
+             mounted:function () {
+                 console.log(this.$el);
+                  console.log("mounted");
+             },
+
+
+             /*下面吗这两个方法需要销毁vue实例才会执行 vm.$destroy();*/
+             beforeDestroy: function () {
+                 console.log("beforeDestroy");
+             },
+             /*销毁之后*/
+             destroyed:function () {
+                  console.log("destroyed")  ;
+             },
+
+             /*数据发生改变才会执行下面的这两个函数*/
+             beforeUpdate:function () {
+                  console.log("beforeUpdated");
+             },
+             updated:function () {
+                  console.log("updated");
+             }
+         })
+     </script>
+
+</body>
+</html>

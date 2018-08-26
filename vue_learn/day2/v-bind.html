@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>V-bind</title>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ul class="pagination">
+            <!--注意v-for="n in pageCount"这行代码，pageCount是一个整数，遍历时n从0开始，然后遍历到pageCount –1结束。-->
+            <li v-for="n in pageCount">
+                <a href="javascripit:void(0)" :class="activeNumber === n + 1 ? 'active' : ''">{{ n + 1 }}</a>
+            </li>
+        </ul>
+    </div>
+</body>
+
+<script>
+
+    new Vue({
+        el:'#app',
+        data:{
+           activeNumber:1,
+            pageCount:10
+        }
+    })
+</script>
+</html>

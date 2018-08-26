@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container{
+            width: 800px;
+            height: 200px;
+        }
+        .left{
+            background: green;
+            /*float: left;*/
+            /*height: 100%;*/
+            width: 200px;
+            /*position 的高度需要显示指定*/
+            position: absolute;
+            height: 200px;
+        }
+        .right{
+            background: blue;
+            float: right;
+            margin-left: 200px;
+            width: 200px;
+            height: 100%;
+        }
+        .middle{
+            /*这样会导致右边模块与前两个模块对不齐，解决办法只需将right的div放在middle之前即可*/
+            margin-left: 200px;
+            margin-right: 200px;
+            background: #ff000e;
+        }
+    </style>
+</head>
+<body>
+   <div class="container">
+       <div class="left">left</div>
+       <div class="right">right</div>
+       <div class="middle">middle</div>
+   </div>
+</body>
+</html>

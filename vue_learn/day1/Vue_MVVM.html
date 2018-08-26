@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VUE---MVVM理解</title>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<!--//view-->
+    <div id="app">
+        <p>{{message}}</p>
+        <input type="text" v-model="message"/>
+    </div>
+<!--MVVM模式本身是实现了双向绑定的，在Vue.js中可以使用v-model指令在表单元素上创建双向数据绑定。-->
+
+</body>
+<script>
+    //model
+    // var tem={
+    //     message:'Hello MVVM'
+    // }
+
+    // viewmodel
+    // new Vue({
+    //     el:'#app',
+    //     data:tem
+    // })
+</script>
+</html>

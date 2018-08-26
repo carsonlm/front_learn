@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container{
+            background: red;
+            width: 400px;
+            /*margin: 20px;*/
+        }
+        .p1{
+            background: green;
+            float: left;
+            width: 100px;
+            height: 50px;
+        }
+        .p2{
+        }
+    </style>
+</head>
+<body>
+   <div class="container">
+       <!--span不能设置宽高，但是有了float属性后，就可以设置宽高-->
+       <span class="p1">
+           float
+       </span>
+       <div class="p2">
+           dddd dddddddd ddddddddddd dddddddddddd dddddddddddd dddddddd ddddddddddddd
+       </div>
+   </div>
+   <div class="container">
+       <span>bc</span>
+       <span class="p1">
+           float
+       </span>
+       <span class="p1">
+           float
+       </span>
+   </div>
+  <div class="container" style="height: 200px;background: pink"></div>
+</body>
+</html>

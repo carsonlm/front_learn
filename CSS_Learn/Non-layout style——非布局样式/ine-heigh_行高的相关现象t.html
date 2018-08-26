@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .cc1{
+           vertical-align: top; /*顶部对齐 不一定是文字的最上部，也可能按顶线   也可以按像素来（适应性差）*/
+            font-size: 12px;
+        }
+        .cc2{
+            font-size: 18px;
+        }
+        .cc3{
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div style="border: solid 1px red;background: red">
+        <!--line-height比字体的px要大,会导致它的宽度会分布到两侧,
+        一个在上，一个在下，就会出现一个很重要的情况，这个inline元素在这个div中时垂直居中的，
+        即：想要一个元素在容器中居中，可以给它设置line-height-->
+        <span style="background: blue;color: aliceblue;font-size: 20px;line-height: 80px;">
+            居中
+        </span>
+    </div>
+
+    <div class="c1">
+        <span class="cc1">第一段</span>
+        <span class="cc2">第一段</span>
+        <span class="cc3">第一段</span>
+    </div>
+<!--首先可能回发现图片离底部有段距离，这是因为img会默认是一个inline元素，即需要遵守行高的构成（基线对其）
+  处理方式：1，可以底线对齐：vertical-aline:"bottom"; 2，不按inline排列，display:block；这样会让图片独占一行
+-->
+    <div style="background: blue">
+        <span>文章</span>
+        <img src="./test.jpg">
+    </div>
+    <div>
+        <div style="float: left;">
+            第四段
+        </div>
+        <div style="float: left;">
+            第五段
+        </div>
+    </div>
+</body>
+</html>

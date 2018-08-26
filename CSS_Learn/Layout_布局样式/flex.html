@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container{
+            width: 800px;
+            height: 200px;
+            display: flex;
+            border: 1px solid black;
+        }
+        .flex{
+            background: red;
+            margin: 5px;
+            flex: 1;/*表示占flex的份数，可以根据他来设置元素的宽度；当然精确宽度需要这样来设置width:350px;flex:none。*/
+        }
+    </style>
+</head>
+<!--低版本的IE不支持flexbox,这个属性有过三次变更，所以不同版本的其他浏览器可能语法会有变化-->
+<body>
+   <div class="container">
+       <div class="flex">
+           flex1
+       </div>
+       <div class="flex">
+           flex2
+       </div>
+   </div>
+</body>
+</html>

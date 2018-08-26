@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+
+    <div id="root">
+        <child>
+            <template slot-scope="slotProps">
+                <li >{{slotProps.item}}</li>
+            </template>
+        </child>
+    </div>
+    <script>
+        Vue.component('child',{
+            data:function () {
+                return {
+                    list:[1,2,3,4]
+                }
+            },
+            // template:'<div><ul ><li v-for="item in list">{{item}}</li></ul></div>'
+            /*需求外部定义怎么循环,该怎么显示也由外部来定义*/
+            template:'<div><ul >' +
+                                '<slot v-for="item in list" :item="item"></slot>' +
+                    '</ul></div>'
+        })
+        var vm=new Vue({
+            el:"#root"
+        })
+    </script>
+</body>
+</html>

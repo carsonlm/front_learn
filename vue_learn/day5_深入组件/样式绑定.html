@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <style>
+        .activated{
+            color: #ff000e;
+        }
+    </style>
+</head>
+<body>
+     <div id="app">
+         <!--:class 除了可以用对象的形式也可以用数组的形式-->
+         <div :class="{activated:isActivated}"  @click="handle">hello</div>
+     </div>
+     <script>
+         var vm=new Vue({
+             el:"#app",
+             data:{
+                 isActivated:false
+             },
+             methods:{
+                handle:function () {
+                    this.isActivated=!this.isActivated;
+                }  
+             }
+         })
+     </script>
+
+</body>
+</html>

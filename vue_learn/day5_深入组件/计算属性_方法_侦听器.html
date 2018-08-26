@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <title>Title</title>
+</head>
+<body>
+   <div id="app">
+      <!--{{fullName}}-->
+      <!--{{fullName()}}-->
+      {{fullName1}}
+   </div>
+
+   <script>
+       var vm=new Vue({
+           el:"#app",
+           data:{
+               first:"dell",
+               last:"lee",
+               fullName1:"dell lee"
+           },
+           //计算属性---是内置缓存的<即只有相关计算数据发生改变计算属性才会重新计算一次>
+           /*computed:{
+               fullName:function () {
+                  return this.first+" "+this.last;
+               }
+           }*/
+           /*方法实现---没有缓存机制*/
+         /*  methods:{
+               fullName:function () {
+                   return this.first+" "+this.last;
+               }
+           }*/
+
+         /*监听方式*/
+         watch:{
+             first:function () {
+                 console.log("计算了一次1");
+                 this.fullName1=this.first+" "+this.last;
+             },
+             last:function () {
+                 console.log("计算了一次2");
+                 this.fullName1=this.first+" "+this.last;
+             }
+         }
+       })
+   </script>
+</body>
+</html>

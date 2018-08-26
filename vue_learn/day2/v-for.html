@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>V-show</title>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <table>
+            <thead>
+               <tr>
+                  <th>Name</th>
+                  <th>Age</th>
+                  <th>Sex</th>
+               </tr>
+            </thead>
+            <tbody>
+                  <tr v-for="people in ren">
+                      <td>{{people.name}}</td>
+                      <td>{{people.age}}</td>
+                      <td>{{people.sex}}</td>
+                  </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+<script>
+
+    new Vue({
+        el:'#app',
+        data:{
+            ren:[{name:'jack',age:12,sex:'f'},{name:'lili',age:23,sex:'m'}]
+        }
+    })
+</script>
+</html>

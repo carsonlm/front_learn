@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>V-show</title>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p><input type="text" v-model="message"></p>
+        <p>
+            <!--click事件直接绑定一个方法-->
+            <button @click="greet">Greet</button>
+        </p>
+        <p>
+            <!--click事件使用内联语句-->
+            <button v-on:click="say('Hi')">Hi</button>
+        </p>
+    </div>
+</body>
+
+<script>
+
+    new Vue({
+        el:'#app',
+        data:{
+            message:'Hello,Vue,js'
+        },
+        methods:{
+            greet:function () {
+                //方法内this指向vm
+                alert(this.message)
+            },
+            say:function (msg) {
+                alert(msg)
+            }
+        }
+    })
+</script>
+</html>

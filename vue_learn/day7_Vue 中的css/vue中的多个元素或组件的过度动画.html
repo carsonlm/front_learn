@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../node_modules/vue/dist/vue.js"></script>
+    <style>
+        .fade-enter,fade-leave-to{
+            opcacity:0;
+        }
+        .fade-enter-active,fade-leave-active{
+            transition: opacity 5s;
+        }
+    </style>
+</head>
+<body>
+      <div id="app">
+          <transition name="fade">
+             <div v-if="show">Hellow world</div>
+             <div v-else="show">Bye world</div>
+          </transition>
+             <button @click="btnClick">switch</button>
+      </div>
+      <script>
+
+
+          var vm=new Vue({
+              el:"#app",
+              data:{
+                  show:false,
+              },
+              methods:{
+                  btnClick:function () {
+                      this.show=!this.show
+                  }
+              }
+          })
+      </script>
+
+</body>
+</html>

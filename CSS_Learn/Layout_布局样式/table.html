@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .left{
+            background: red;
+        }
+        .right{
+            background: blue;
+        }
+        table{
+            width: 800px;
+            height: 200px;
+            border-collapse: collapse; /*collapse 边框会合并为一个单一的边框。会忽略 border-spacing 和 empty-cells 属性*/
+        }
+        .table{
+            margin-top: 20px;
+            display: table;
+            width: 800px;
+            height: 200px;
+        }
+        .table-row{
+            display: table-row;
+        }
+        .table-cell{
+            vertical-align: center;
+            display: table-cell;
+        }
+    </style>
+</head>
+<body>
+<!--表格文字是默认居中的-->
+    <table>
+        <tr>
+            <td class="left">left</td>
+            <td class="right"> right</td>
+        </tr>
+    </table>
+
+    <!--div文字不是默认居中的 可以通过vertical-align:middle 来设置居中-->
+    <div class="table">
+      <div class="table-row">
+        <div class="left table-cell">
+            left
+        </div>
+        <div class="right table-cell">
+            right
+        </div>
+      </div>
+    </div>
+</body>
+</html>
